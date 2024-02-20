@@ -25,9 +25,14 @@ export class ProductService {
     return this.http.get<Product>(`${this.apiUrl}/products/${id}`);
   }
 
-  createProduct(product: Product): Observable<Product> {
-    return this.http.post<Product>(`${this.apiUrl}/products/create`, product);
+  // createProduct(product: Product): Observable<Product> {
+  //   return this.http.post<Product>(`${this.apiUrl}/products/create`, product);
+  // }
+
+  createProduct(formData: FormData): Observable<Product> {
+    return this.http.post<Product>(`${this.apiUrl}/products/create`, formData);
   }
+
 
   updateProduct(id: string, product: Product): Observable<Product> {
     return this.http.put<Product>(`${this.apiUrl}/products/update/${id}`, product);
@@ -55,16 +60,5 @@ export class ProductService {
   deleteCategory(categoryId: string): Observable<Category> {
     return this.http.delete<Category>(`${this.apiUrl}/categories/${categoryId}`);
   }
-
-  uploadImage(file: File): Observable<string> {
-    const formData: FormData = new FormData();
-    formData.append('file', file, file.name);
-
-    return this.http.post<string>(`${this.apiUrl}/upload`, formData);
-  }
-  associateImageWithProduct(productId: string, imageUrl: string): Observable<Product> {
-    return this.http.put<Product>(`${this.apiUrl}/products/associateImage/${productId}`, { imagesURL: imageUrl });
-  }
-
 
 }

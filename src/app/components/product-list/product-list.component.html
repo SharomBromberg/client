@@ -12,20 +12,21 @@
     <div class="row">
       <div class="col-md-8">
         <ul>
-          <li> id: {{product._id}} </li>
+          <!-- <li> id: {{product._id}} </li> -->
           <li> name: {{product.name}} </li>
           <li> description: {{product.description}} </li>
           <li> price: {{product.price}} </li>
-          <li> category: {{product.category}} </li>
-          <li> createdAt: {{product.createdAt}} </li>
+          <!-- <li> category: {{product.category}} </li>
+          <li> createdAt: {{product.createdAt}} </li> -->
         </ul>
         <button (click)="deleteProduct(product?._id)" class="btn btn-danger"> Delete </button>
         <button [routerLink]="['/product/update', product._id]" class="btn btn-secondary"> Edit </button>
       </div>
       <div class="col-md-4">
-        <img *ngIf="product.imagesURL" [src]="product.imagesURL[0]" class="card-img">
-
+        <!-- <img [src]="product.imagesURL" class="card-img"> -->
+        <div *ngFor="let filename of product.filenames" class="picture">
+          <img [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+        </div>
       </div>
-
     </div>
   </div>

@@ -6,7 +6,7 @@ export interface Product {
   description: string;
   price: number;
   category: Category;  // Utilizando la interfaz Category directamente
-  imagesURL: string;
-  createdAt?: Date | string;
-  updatedAt?: Date | string;
+  filenames: string[];
+  createdAt?: Date;
+  updatedAt?: Date;
 }

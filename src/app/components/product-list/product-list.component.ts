@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from '../../interfaces/product';
 import { ProductService } from '../../services/product.service';
+import { Category } from '../../interfaces/categories';
 
 
 @Component({
@@ -13,8 +14,8 @@ export class ProductListComponent implements OnInit {
   constructor(private productService: ProductService) { }
 
 
-  products: any[] = [];
-  categories: any[] = [];
+  products: Product[] = [];
+  categories: Category[] = [];
   selectedCategoryId: string = '';
   noProductsMessage: string = '';
 

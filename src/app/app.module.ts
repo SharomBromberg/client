@@ -7,8 +7,8 @@ import { CategoriesListComponent } from './components/categories-list/categories
 import { ProductListComponent } from './components/product-list/product-list.component';
 import { ProductFormComponent } from './components/product-form/product-form.component';
 import { CommonModule } from '@angular/common';
-import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule, provideHttpClient, withFetch } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
@@ -22,15 +22,16 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     AppRoutingModule,
     BrowserModule,
-
     CommonModule,
     HttpClientModule,
     FormsModule,
     NgbModule,
+    ReactiveFormsModule
 
   ],
   providers: [
-    provideClientHydration()
+    provideClientHydration(),
+    provideHttpClient(withFetch())
   ],
   bootstrap: [AppComponent]
 })
