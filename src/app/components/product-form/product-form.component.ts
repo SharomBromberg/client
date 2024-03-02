@@ -105,29 +105,6 @@ export class ProductFormComponent implements OnInit {
     }
   }
 }
-
-// submitProduct() {
-//   this.productService.createProduct(this.product)
-//     .subscribe(
-//       res => {
-//         console.log(res);
-//         this.router.navigate(['/']);
-//       },
-//       err => console.log(err)
-//     )
-// }
-// submitProduct(): void {
-//   this.productService.createProduct(this.product).subscribe(
-//     (createdProduct) => {
-//       console.log('Product created successfully:', createdProduct);
-//       // Handle success, e.g., redirect to product list page
-//     },
-//     (error) => {
-//       console.error('Error creating product:', error);
-//       // Handle error, e.g., display an error message to the user
-//     }
-//   );
-// }
 // updateProduct() {
 //   if (this.product._id !== undefined) {
 //     delete this.product.createdAt;
@@ -144,18 +121,3 @@ export class ProductFormComponent implements OnInit {
 //     console.error("Product ID is undefined. Cannot update the product.");
 //   }
 // }
-// onFileChange(event: Event): void {
-//   const inputElement = event.target as HTMLInputElement;
-//   const fileList: FileList | null = inputElement.files;
-
-//   if (fileList && fileList.length > 0) {
-//     // Asignar los nombres de archivo a la propiedad filenames
-//     this.product.filenames = [];
-//     for (let i = 0; i < fileList.length; i++) {
-//       this.product.filenames.push(fileList[i].name);
-//       console.log('File Name:', fileList[i].name);
-//     }
-//   }
-// }
-
-//}

@@ -1,0 +1,32 @@
+<div class="products">
+
+    <div class="products__categories">
+        <label class="products__categories__label">Filtrar por Categoría:</label>
+        <select class="products__categories__select" [(ngModel)]="selectedCategoryId"
+            (change)="filterProductsByCategory()">
+            <option value="" selected>Todas las Categorías</option>
+            <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
+        </select>
+    </div>
+
+    <div *ngIf="noProductsMessage" class="products__noproductsMessage">
+        <p>{{ noProductsMessage }}</p>
+    </div>
+
+    <div *ngFor="let product of products" class="products__list">
+        <div class="products__list__row">
+            <div class="products__list__row__column">
+                <ul>
+                    <li> name: {{product.name}} </li>
+                    <li> description: {{product.description}} </li>
+                    <li> price: {{product.price}} </li>
+                </ul>
+            </div>
+            <div class="products__list__row__column">
+                <!-- <img [src]="product.imagesURL" class="card-img"> -->
+                <div *ngFor="let filename of product.filenames" class="products__list__row__column__pictures">
+                    <img [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+                </div>
+            </div>
+        </div>
+    </div>

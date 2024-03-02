@@ -1,37 +1,3 @@
-<!-- 
-<div class="container">
-  <h2>{{ edit ? 'Edit Product' : 'Create Product' }}</h2>
-
-  <form (ngSubmit)="edit ? updateProduct() : submitProduct()">
-    <div class="form-group">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" [(ngModel)]="product.name" required>
-    </div>
-
-    <div class="form-group">
-      <label for="description">Description:</label>
-      <textarea id="description" name="description" [(ngModel)]="product.description" required></textarea>
-    </div>
-    <div class="form-group">
-      <label for="description">Category:</label>
-      <textarea id="category" name="category" [(ngModel)]="product.category" required></textarea>
-    </div>
-
-    <div class="form-group">
-      <label for="price">Price:</label>
-      <input type="number" id="price" name="price" [(ngModel)]="product.price" required>
-    </div>
-
-    <div class="form-group">
-      <label for="imagesURL">Images URL:</label>
-      <input type="text" id="imagesURL" name="imagesURL" [(ngModel)]="product.imagesURL" required>
-    </div>
-
-    <button type="submit">{{ edit ? 'Update' : 'Create' }}</button>
-  </form>
-</div> -->
-
-
 <div class="row">
   <div class="col-sm-4 offset-sm-4">
     <div class="card card-body">
@@ -55,10 +21,7 @@
           <label for="category" class="form-label">Categoría:</label>
           <select id="category" class="form-select" formControlName="category">
             <!-- <option value="" disabled selected>Seleccione...</option> -->
-
-
             <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
-
           </select>
 
         </div>
