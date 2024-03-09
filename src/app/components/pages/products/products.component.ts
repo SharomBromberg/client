@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { Category } from '../../../interfaces/categories';
-import SwiperCore, { Autoplay, Navigation } from '../../../../../node_modules/swiper'
 import { Router } from '@angular/router';
 
 
@@ -25,10 +24,7 @@ export class ProductsComponent implements OnInit {
   totalPages: number = 0; // Número total de páginas
   selectedProduct: Product | null = null;
 
-  config = {
-    autoplay: { delay: 3000 }, // Desplazamiento automático cada 3 segundos
-    navigation: true
-  };
+
   ngOnInit() {
     this.getProducts();
     this.getCategories();
@@ -94,16 +90,25 @@ export class ProductsComponent implements OnInit {
       this.currentPage++;
     }
   }
+  // getProductById(id: string): void {
+  //   this.productService.getProductById(id)
+  //     .subscribe(
+  //       res => {
+  //         this.selectedProduct = res;
+  //         console.log(this.selectedProduct)
+  //       },
+  //       err => console.error('Error loading product', err)
+  //     );
+  // }
   getProductById(id: string): void {
     this.productService.getProductById(id)
       .subscribe(
         res => {
           this.selectedProduct = res;
-          console.log(this.selectedProduct)
+          this.router.navigate(['/product-details', this.selectedProduct._id]);
         },
         err => console.error('Error loading product', err)
       );
   }
-
 }
 
