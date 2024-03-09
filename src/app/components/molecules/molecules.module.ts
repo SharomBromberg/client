@@ -7,11 +7,12 @@ import { AtomsModule } from '../atoms/atoms.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './footer/footer.component';
 
 
 
 @NgModule({
-  declarations: [NavbarComponent, ListComponent],
+  declarations: [NavbarComponent, ListComponent, FooterComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -22,6 +23,6 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     HttpClientModule,
   ],
-  exports: [NavbarComponent, ListComponent]
+  exports: [NavbarComponent, ListComponent, FooterComponent]
 })
 export class MoleculesModule { }

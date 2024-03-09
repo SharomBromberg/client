@@ -4,47 +4,37 @@
 @import '../../../../assets/tokens/margins.scss';
 @import '../../../../assets/tokens/shadows.scss';
 
-.container {
+.launch {
+
     display: flex;
+    flex-direction: column;
+    width: 100%;
     align-items: center;
-    place-content: center;
-    margin-top: 4rem;
-    max-width: 100%;
 
-    &__image {
-        display: flex;
-        justify-content: space-around;
-        padding: nome;
-        height: 25rem;
-        width: auto;
-        overflow: hidden;
-
-        img {
-            width: 35rem;
-            height: auto;
-            object-fit: cover;
-
-
-        }
+    h2 {
+        @include fira-code-bold-large;
+        margin: 5rem 0;
     }
 
-    &__text {
-
+    &__items {
         display: flex;
-        gap: 10rem;
-        flex-direction: column;
-        place-content: center;
+        flex-wrap: wrap;
+        gap: 4rem;
 
-        h1 {
-            @include code-bolder-large;
-            color: $blue-04;
-            font-weight: 900;
+        &__container {
+            display: flex;
+            width: 25rem;
+            flex-direction: column;
+            text-align: center;
+            gap: 2rem;
 
-        }
+            &__title {
+                @include fira-code-bold-medium;
+            }
 
-        p {
-            @include code-normal-large;
-            margin: 0 auto;
+            &__paragraph {
+                @include fira-code-medium
+            }
         }
     }
 }

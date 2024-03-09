@@ -7,6 +7,7 @@ import { MoleculesModule } from '../../molecules/molecules.module';
 import { AtomsModule } from '../../atoms/atoms.module';
 import { FormsModule } from '@angular/forms';
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { SwiperModule } from 'swiper/angular';
 
 
 @NgModule({
@@ -20,7 +21,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MoleculesModule,
     AtomsModule,
     FormsModule,
-    SlickCarouselModule
+    SlickCarouselModule,
+    SwiperModule
   ]
 })
 export class ProductsModule { }

@@ -1,0 +1,15 @@
+<div class="container">
+    <!-- Mostrar lista de productos -->
+    <div *ngFor="let product of products" class="container__products__list">
+        <div class="container__products__list__item">
+            <div class="container__products__list__item__image">
+                <img [src]="'http://localhost:3000/products/uploads/' + product.filenames[0]" alt="Product Image">
+            </div>
+            <div class="container__products__list__item__details">
+                <h4>{{ product.name }}</h4>
+                <p>Precio: {{ product.price }}</p>
+                <button (click)="showProductDetails(product)">Ver Detalles</button>
+            </div>
+        </div>
+    </div>
+</div>

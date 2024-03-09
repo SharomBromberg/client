@@ -1,32 +1,56 @@
-<div class="products">
-
-    <div class="products__categories">
-        <label class="products__categories__label">Filtrar por Categoría:</label>
-        <select class="products__categories__select" [(ngModel)]="selectedCategoryId"
+<div class="container">
+    <div class="container__categories">
+        <label class="container__categories__label">Filtrar por Categoría:</label>
+        <select class="container__categories__select" [(ngModel)]="selectedCategoryId"
             (change)="filterProductsByCategory()">
             <option value="" selected>Todas las Categorías</option>
             <option *ngFor="let category of categories" [value]="category._id">{{ category.name }}</option>
         </select>
     </div>
 
-    <div *ngIf="noProductsMessage" class="products__noproductsMessage">
-        <p>{{ noProductsMessage }}</p>
-    </div>
 
-    <div *ngFor="let product of products" class="products__list">
-        <div class="products__list__row">
-            <div class="products__list__row__column">
-                <ul>
-                    <li> name: {{product.name}} </li>
-                    <li> description: {{product.description}} </li>
-                    <li> price: {{product.price}} </li>
-                </ul>
-            </div>
-            <div class="products__list__row__column">
-                <!-- <img [src]="product.imagesURL" class="card-img"> -->
-                <div *ngFor="let filename of product.filenames" class="products__list__row__column__pictures">
-                    <img [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+    <div class="container__products">
+
+        <div *ngIf="noProductsMessage" class="container__products__noproductsMessage">
+            <p>{{ noProductsMessage }}</p>
+        </div>
+
+        <div *ngFor="let product of products" class="container__products__list">
+            <div class="container__products__list__item">
+                <div class="container__products__list__item__image">
+                    <img [src]="'http://localhost:3000/products/uploads/' + product.filenames[0]" alt="Product Image">
                 </div>
+                <div class="container__products__list__item__details">
+                    <h4>{{ product.name }}</h4>
+                    <p>Precio: {{ product.price }}</p>
+                    <!-- <li> id: {{product._id}} </li> -->
+
+                    <!-- <button>Ver Detalles</button> -->
+                    <button *ngIf="product._id !== undefined" (click)="product._id && getProductById(product._id)">Ver
+                        Detalles</button>
+                </div>
+                <!-- <div class=" products__list__row__column">
+                    <ul>
+                        <li> name: {{product.name}} </li>
+                        <li> description: {{product.description}} </li>
+                        <li> price: {{product.price}} </li>
+                    </ul>
+            </div> -->
+                <!-- <div class="products__list__row__column"> -->
+                <!-- <img [src]="product.imagesURL" class="card-img"> -->
+                <!-- <div *ngFor="let filename of product.filenames" class="products__list__row__column__pictures">
+                    <img [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+                </div> -->
+                <!-- </div> -->
             </div>
         </div>
+
     </div>
+    <div class="pages">
+        <button class="pages__buttonpages" (click)="currentPage = currentPage - 1"
+            [disabled]="currentPage === 1">Anterior</button>
+        <span>Página {{ currentPage }} de {{ totalPages }}</span>
+        <button class="pages__buttonpages" (click)="currentPage = currentPage + 1"
+            [disabled]="currentPage === totalPages">Siguiente</button>
+    </div>
+</div>

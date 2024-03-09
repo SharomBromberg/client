@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { Category } from '../../../interfaces/categories';
+import SwiperCore, { Autoplay, Navigation } from '../../../../../node_modules/swiper'
+import { Router } from '@angular/router';
+
+
 
 @Component({
   selector: 'app-products',
@@ -9,15 +13,22 @@ import { Category } from '../../../interfaces/categories';
   styleUrl: './products.component.scss'
 })
 export class ProductsComponent implements OnInit {
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private router: Router) { }
 
 
   products: Product[] = [];
   categories: Category[] = [];
   selectedCategoryId: string = '';
   noProductsMessage: string = '';
+  itemsPerPage: number = 5; // Número de productos por página
+  currentPage: number = 1; // Página actual
+  totalPages: number = 0; // Número total de páginas
+  selectedProduct: Product | null = null;
 
-
+  config = {
+    autoplay: { delay: 3000 }, // Desplazamiento automático cada 3 segundos
+    navigation: true
+  };
   ngOnInit() {
     this.getProducts();
     this.getCategories();
@@ -45,8 +56,6 @@ export class ProductsComponent implements OnInit {
         err => console.log('Error loading categories', err)
       );
   }
-
-
   filterProductsByCategory() {
     if (this.selectedCategoryId) {
       this.productService.getProductsByCategory(this.selectedCategoryId).subscribe(
@@ -69,34 +78,32 @@ export class ProductsComponent implements OnInit {
       this.getProducts();
     }
   }
-  slideConfig = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    dots: true,
-    autoplay: true,
-    autoplaySpeed: 7000,
-    pauseOnHover: true,
-    infinite: true,
-    fade: true,
-    responsive: [
-      {
-        breakpoint: 992,
-        settings: {
-          arrows: false,
-          infinite: true,
-          slidesToShow: 6,
-          slidesToScroll: 3,
+  calculateTotalPages() {
+    this.totalPages = Math.ceil(this.products.length / this.itemsPerPage);
+  }
+  changePage(pageNumber: number) {
+    this.currentPage = pageNumber;
+  }
+  goToPreviousPage() {
+    if (this.currentPage > 1) {
+      this.currentPage--;
+    }
+  }
+  goToNextPage() {
+    if (this.currentPage < this.totalPages) {
+      this.currentPage++;
+    }
+  }
+  getProductById(id: string): void {
+    this.productService.getProductById(id)
+      .subscribe(
+        res => {
+          this.selectedProduct = res;
+          console.log(this.selectedProduct)
         },
-      },
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false,
-          infinite: true,
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
-  };
+        err => console.error('Error loading product', err)
+      );
+  }
+
 }
+

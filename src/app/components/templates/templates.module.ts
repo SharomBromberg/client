@@ -11,6 +11,7 @@ import { DevelopmentComponent } from './development/development.component';
 import { NetworksComponent } from './networks/networks.component';
 import { SupportComponent } from './support/support.component';
 import { TechnologyComponent } from './technology/technology.component';
+import { ProductsTemplateComponent } from './products-template/products-template.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { TechnologyComponent } from './technology/technology.component';
     DevelopmentComponent,
     NetworksComponent,
     SupportComponent,
-    TechnologyComponent
+    TechnologyComponent,
+
   ],
   imports: [
     CommonModule,

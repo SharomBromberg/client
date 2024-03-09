@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuElement } from '../../../interfaces/menu';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -13,12 +13,19 @@ export class NavbarComponent {
     // { title: 'admin', route: '/Administrador' },
     { title: 'Inicio', route: '/Inicio' },
     { title: 'Productos', route: '/Productos' },
-    { title: 'Contacto', route: '/Contacto' },
 
   ];
-
   isMenuOpen: boolean = false;
+  isHomePage: boolean = false;
   constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.isHomePage = (event.url === '/Inicio');
+      }
+    });
+  }
 
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

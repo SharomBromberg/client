@@ -20,7 +20,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     OrganismsModule,
     TemplatesModule,
     HomeModule,
-    SlickCarouselModule
+    SlickCarouselModule,
   ],
   exports: [HomeComponent]
 })

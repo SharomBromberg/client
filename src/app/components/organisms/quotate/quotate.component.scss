@@ -1,0 +1,58 @@
+@import '../../../../assets/tokens/breakpoints.scss';
+@import '../../../../assets/tokens/colors.scss';
+@import '../../../../assets/tokens/fonts.scss';
+@import '../../../../assets/tokens/margins.scss';
+@import '../../../../assets/tokens/shadows.scss';
+
+.quotate {
+
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin: 8rem 0;
+
+
+    h2 {
+        @include fira-code-bold-large;
+        margin: 5rem 0;
+    }
+
+    &__items {
+        display: flex;
+        width: 100%;
+        flex-wrap: wrap;
+        gap: 5rem;
+        justify-content: center;
+
+
+        &__container {
+
+            display: flex;
+            width: 25%;
+            flex-direction: column;
+            text-align: center;
+            place-content: center;
+            align-items: center;
+            gap: 2rem;
+            margin-bottom: 8rem;
+
+            &__image {
+                width: 25rem;
+                height: 20rem;
+                object-fit: cover;
+            }
+
+            &__title {
+                @include fira-code-bold-medium;
+            }
+
+            &__button {
+                @include fira-code-medium;
+                color: $white-00;
+                background-color: $black-00;
+                border-radius: 1rem;
+            }
+        }
+    }
+}

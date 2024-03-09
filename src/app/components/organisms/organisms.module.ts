@@ -7,11 +7,13 @@ import { AtomsModule } from '../atoms/atoms.module';
 import { LaunchComponent } from './launch/launch.component';
 import { FormsModule } from '@angular/forms';
 import { MoleculesModule } from '../molecules/molecules.module';
+import { DatingComponent } from './dating/dating.component';
+import { QuotateComponent } from './quotate/quotate.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, ShoppingCartComponent, LaunchComponent],
+  declarations: [HeaderComponent, ShoppingCartComponent, LaunchComponent, DatingComponent, QuotateComponent],
   imports: [
     CommonModule,
     RouterModule,
@@ -20,6 +22,6 @@ import { MoleculesModule } from '../molecules/molecules.module';
     MoleculesModule
 
   ],
-  exports: [HeaderComponent, ShoppingCartComponent, LaunchComponent]
+  exports: [HeaderComponent, ShoppingCartComponent, LaunchComponent, DatingComponent, QuotateComponent]
 })
 export class OrganismsModule { }

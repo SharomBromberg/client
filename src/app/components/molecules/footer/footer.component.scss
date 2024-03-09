@@ -1,0 +1,195 @@
+@import '../../../../assets/tokens/breakpoints.scss';
+@import '../../../../assets/tokens/colors.scss';
+@import '../../../../assets/tokens/fonts.scss';
+@import '../../../../assets/tokens/margins.scss';
+@import '../../../../assets/tokens/shadows.scss';
+
+footer {
+    background-color: $blue-03;
+    display: flex;
+    place-content: center;
+    justify-content: space-around;
+    max-width: 100%;
+}
+
+@media (min-width: $breakpoint-desktop-small) {
+    .container {
+        margin: $margin-small $margin-medium;
+        display: flex;
+        max-width: 100%;
+        gap: 4rem;
+
+        &__allies {
+            display: flex;
+            flex-direction: column;
+            color: $white-00;
+            align-items: center;
+
+            h2 {
+                @include fira-code-semibold;
+                text-align: right;
+            }
+
+            ul {
+                column-count: 2;
+                /* Especifica el número de columnas */
+                list-style: none;
+                gap: 0.5rem;
+
+
+            }
+
+            li {
+                @include fira-code-semibold;
+                list-style: none;
+            }
+        }
+
+        &__contact {
+            display: flex;
+            flex-direction: column;
+            color: $white-00;
+            align-items: center;
+
+            h2 {
+                @include fira-code-semibold;
+            }
+
+            li {
+                @include fira-code-semibold;
+                display: flex;
+                list-style: none;
+                padding: 0.5rem;
+
+                img {
+                    height: 2rem;
+                    margin: 0 $margin-large;
+                }
+
+                a {
+                    color: $white-00;
+                }
+
+            }
+        }
+
+        &__findUs {
+            display: flex;
+            flex-direction: column;
+            color: $white-00;
+
+            display: flex;
+            flex-direction: column;
+
+            color: $white-00;
+            align-items: center;
+
+            h2 {
+                @include fira-code-semibold;
+            }
+
+            p {
+                @include fira-code-semibold;
+                display: flex;
+                list-style: none;
+                margin-top: $margin-large;
+
+                img {
+                    height: 2rem;
+                    margin: 0 $margin-large;
+                }
+            }
+        }
+    }
+}
+
+@media screen and (min-width: $breakpoint-mobile-small) and (max-width: $breakpoint-desktop-small) {
+    .footer {
+        padding: 0 3rem;
+        margin-right: $margin-small;
+        margin-left: $margin-small;
+        margin-top: $margin-large;
+        border-top-left-radius: 1rem;
+        border-top-right-radius: 1rem;
+        height: auto;
+
+
+        .container {
+            display: flex;
+            width: 100%;
+            flex-direction: column;
+
+            justify-content: space-around;
+
+
+            &__allies {
+                display: flex;
+                width: 100%;
+                color: $white-00;
+
+                h2 {
+                    @include fira-code-semibold;
+                }
+
+                ul {
+                    column-count: 2;
+                    list-style: none;
+                    gap: 0.5rem;
+                }
+
+                li {
+                    @include fira-code-semibold;
+                    list-style: none;
+                }
+            }
+
+            &__contact {
+                display: flex;
+                color: $white-00;
+
+                h2 {
+                    @include fira-code-semibold;
+                }
+
+                li {
+                    @include fira-code-semibold;
+                    display: flex;
+                    list-style: none;
+
+                    img {
+                        height: 1rem;
+
+
+                    }
+
+                    a {
+                        color: $white-00;
+                        margin: 0 $margin-small;
+                    }
+                }
+            }
+
+            &__findUs {
+                display: flex;
+                gap: 1rem;
+                color: $white-00;
+                margin-bottom: $margin-medium;
+
+                h2 {
+                    @include fira-code-semibold;
+                }
+
+                p {
+                    @include fira-code-semibold;
+
+                    align-items: cener;
+
+                    img {
+                        height: 2rem;
+                        margin: 0 $margin-large;
+                    }
+                }
+            }
+        }
+    }
+}
