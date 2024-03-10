@@ -3,7 +3,7 @@
     <div class="container__list" *ngIf="selectedProduct">
         <div class="container__list__item">
             <div *ngFor="let filename of selectedProduct.filenames" class="container__products__list__item__image">
-                <img [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+                <img class="slide" [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
             </div>
             <div class="container__item__details">
                 <h2>{{ selectedProduct.name }}</h2>

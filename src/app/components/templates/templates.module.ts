@@ -11,7 +11,7 @@ import { DevelopmentComponent } from './development/development.component';
 import { NetworksComponent } from './networks/networks.component';
 import { SupportComponent } from './support/support.component';
 import { TechnologyComponent } from './technology/technology.component';
-import { ProductsTemplateComponent } from './products-template/products-template.component';
+import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -28,8 +28,7 @@ import { ProductsTemplateComponent } from './products-template/products-template
     MoleculesModule,
     OrganismsModule,
     TemplatesRoutingModule,
-
-
+    SlickCarouselModule,
   ],
   exports: [
     DevelopmentComponent,

@@ -3,10 +3,12 @@ import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
 
+import Swiper from 'swiper';
+
 @Component({
   selector: 'app-products-template',
   templateUrl: './products-template.component.html',
-  styleUrl: './products-template.component.scss'
+  styleUrls: ['./products-template.component.scss']
 })
 export class ProductsTemplateComponent {
 
@@ -16,6 +18,16 @@ export class ProductsTemplateComponent {
 
   constructor(private productService: ProductService, private route: ActivatedRoute) { }
 
+  ngAfterViewInit() {
+    const swiper = new Swiper('.swiper-container', {
+      loop: true,
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      allowTouchMove: true // Habilitar el deslizamiento táctil
+    });
+  }
 
   ngOnInit(): void {
 
@@ -32,4 +44,6 @@ export class ProductsTemplateComponent {
       console.error('No product ID provided');
     }
   }
+
+
 }
