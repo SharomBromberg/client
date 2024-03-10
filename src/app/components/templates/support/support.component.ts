@@ -3,7 +3,7 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'app-support',
   templateUrl: './support.component.html',
-  styleUrl: './support.component.scss'
+  styleUrls: ['./support.component.scss']
 })
 export class SupportComponent {
 

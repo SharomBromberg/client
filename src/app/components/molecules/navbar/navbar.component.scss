@@ -7,7 +7,7 @@
 .navbar {
     height: 6rem;
     display: flex;
-
+    justify-content: space-around;
 
 
     &__content {
@@ -15,6 +15,7 @@
         opacity: 90%;
         display: flex;
         width: 100%;
+
         justify-content: space-between;
         place-content: center;
         align-items: center;

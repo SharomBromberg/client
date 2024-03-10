@@ -2,8 +2,32 @@
 
     <div class="container__list" *ngIf="selectedProduct">
         <div class="container__list__item">
-            <div *ngFor="let filename of selectedProduct.filenames" class="container__products__list__item__image">
-                <img class="slide" [src]="'http://localhost:3000/products/uploads/' + filename" alt="Product Image">
+            <div id="productsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#productsCarousel" data-bs-slide-to="0" class="active"
+                        aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#productsCarousel" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#productsCarousel" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active" data-bs-interval="10000"
+                        *ngFor="let filename of selectedProduct.filenames; let i = index">
+                        <img class="d-block w-100" [src]="'http://localhost:3000/products/uploads/' + filename"
+                            alt="Product Image {{ i }}">
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#productsCarousel"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#productsCarousel"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
             </div>
             <div class="container__item__details">
                 <h2>{{ selectedProduct.name }}</h2>
@@ -11,6 +35,7 @@
                 <p>Precio: {{ selectedProduct.price }}</p>
 
             </div>
+
         </div>
     </div>
 

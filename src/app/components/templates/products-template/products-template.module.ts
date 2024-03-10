@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ProductsTemplateRoutingModule } from './products-template-routing.module';
 import { ProductsTemplateComponent } from './products-template.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -12,10 +12,8 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
   imports: [
     CommonModule,
     ProductsTemplateRoutingModule,
-    SlickCarouselModule,
-
-
   ],
-  exports: [ProductsTemplateComponent]
+  exports: [ProductsTemplateComponent],
+  providers: [NgbCarouselConfig],
 })
 export class ProductsTemplateModule { }

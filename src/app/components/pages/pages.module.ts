@@ -7,7 +7,6 @@ import { OrganismsModule } from '../organisms/organisms.module';
 import { TemplatesModule } from '../templates/templates.module';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
 
 
 @NgModule({
@@ -20,7 +19,6 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     OrganismsModule,
     TemplatesModule,
     HomeModule,
-    SlickCarouselModule,
   ],
   exports: [HomeComponent]
 })

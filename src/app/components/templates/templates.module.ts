@@ -11,7 +11,7 @@ import { DevelopmentComponent } from './development/development.component';
 import { NetworksComponent } from './networks/networks.component';
 import { SupportComponent } from './support/support.component';
 import { TechnologyComponent } from './technology/technology.component';
-import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -28,7 +28,7 @@ import { SlickCarouselModule } from 'ngx-slick-carousel';
     MoleculesModule,
     OrganismsModule,
     TemplatesRoutingModule,
-    SlickCarouselModule,
+    NgbModule
   ],
   exports: [
     DevelopmentComponent,

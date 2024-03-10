@@ -26,29 +26,6 @@
                 display: flex;
                 width: 50rem;
                 margin: 0 auto;
-
-
-                &__slide {
-                    display: flex;
-                    align-items: center;
-                    place-content: center;
-                    width: 20rem;
-                    overflow: hidden;
-                    object-fit: cover;
-
-                    &__imagebox {
-                        display: flex;
-                        flex-direction: column;
-                        width: 20rem;
-                        height: 20rem;
-                        place-content: center;
-                        padding: 2rem;
-
-                        &__image {
-                            max-width: 100%;
-                        }
-                    }
-                }
             }
 
             &__details {

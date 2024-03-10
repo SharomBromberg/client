@@ -5,7 +5,6 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ListComponent } from './list/list.component';
 import { AtomsModule } from '../atoms/atoms.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FooterComponent } from './footer/footer.component';
 
@@ -19,7 +18,6 @@ import { FooterComponent } from './footer/footer.component';
     AtomsModule,
     FormsModule,
     FormsModule,
-    NgbModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],

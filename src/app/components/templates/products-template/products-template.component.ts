@@ -2,8 +2,8 @@ import { Component } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
+import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
 
-import Swiper from 'swiper';
 
 @Component({
   selector: 'app-products-template',
@@ -16,18 +16,18 @@ export class ProductsTemplateComponent {
   products: Product[] = [];
 
 
-  constructor(private productService: ProductService, private route: ActivatedRoute) { }
+  constructor(private productService: ProductService, private route: ActivatedRoute, config: NgbCarouselConfig) { }
 
-  ngAfterViewInit() {
-    const swiper = new Swiper('.swiper-container', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      allowTouchMove: true // Habilitar el deslizamiento táctil
-    });
-  }
+  // ngAfterViewInit() {
+  //   const swiper = new Swiper('.swiper-container', {
+  //     loop: true,
+  //     pagination: {
+  //       el: '.swiper-pagination',
+  //       clickable: true,
+  //     },
+  //     allowTouchMove: true // Habilitar el deslizamiento táctil
+  //   });
+  // }
 
   ngOnInit(): void {
 

@@ -8,6 +8,7 @@ import { FormsModule } from '@angular/forms';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { PagesModule } from './pages/pages.module';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 
@@ -20,7 +21,8 @@ import { PagesModule } from './pages/pages.module';
     OrganismsModule,
     TemplatesModule,
     PagesModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   exports: [
     AtomsModule,
