@@ -6,52 +6,135 @@
 
 .quotate {
 
-    display: flex;
-    flex-direction: column;
-    width: 100%;
     align-items: center;
-    margin: 8rem 0;
-
-
-    h2 {
-        @include fira-code-bold-large;
-        margin: 5rem 0;
-    }
 
     &__items {
-        display: flex;
-        width: 100%;
-        flex-wrap: wrap;
-        gap: 5rem;
-        justify-content: center;
 
+        justify-content: center;
 
         &__container {
 
-            display: flex;
-            width: 25%;
-            flex-direction: column;
-            text-align: center;
             place-content: center;
             align-items: center;
-            gap: 2rem;
-            margin-bottom: 8rem;
 
-            &__image {
-                width: 25rem;
-                height: 20rem;
-                object-fit: cover;
+        }
+    }
+}
+
+@media (min-width: $breakpoint-480p) {
+    .quotate {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: 8rem 0;
+        padding: 5rem;
+
+        h2 {
+            @include fira-code-bold-large;
+            margin: 5rem 0;
+        }
+
+        &__items {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+            gap: 3rem;
+            justify-content: center;
+
+            &__container {
+                display: flex;
+                flex-direction: column;
+                text-align: center;
+                place-content: center;
+                align-items: center;
+                gap: 2rem;
+                margin-bottom: 8rem;
+
+                &__image {
+
+                    object-fit: cover;
+                    margin-top: 0;
+
+                    img {
+                        width: 25rem;
+                        height: 16rem;
+                        margin: 0 auto;
+                    }
+                }
+
+                &__title {
+                    @include fira-code-bold-medium;
+                    height: 2rem
+                }
+
+                &__button {
+                    @include fira-code-medium;
+                    color: $white-00;
+                    background-color: $black-00;
+                    border-radius: 1rem;
+                }
             }
+        }
+    }
 
-            &__title {
-                @include fira-code-bold-medium;
-            }
+}
 
-            &__button {
-                @include fira-code-medium;
-                color: $white-00;
-                background-color: $black-00;
-                border-radius: 1rem;
+@media (max-width: $breakpoint-tablet-portrait) {
+
+    .quotate {
+
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin: 1rem 0;
+
+
+        h2 {
+            @include fira-code-bold-large;
+            margin: 5rem 0;
+        }
+
+        &__items {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            gap: 5rem;
+
+
+
+            &__container {
+                display: flex;
+                width: 90%;
+                flex-direction: column;
+                text-align: center;
+                place-content: center;
+                align-items: center;
+                gap: 2rem;
+                margin-bottom: 8rem;
+                margin: 0 auto;
+
+                &__image {
+                    width: 20rem;
+                    object-fit: cover;
+
+                    img {
+                        width: 18rem;
+                        height: 11rem;
+                    }
+                }
+
+                &__title {
+                    @include fira-code-bold-medium;
+                }
+
+                &__button {
+                    @include fira-code-medium;
+                    color: $white-00;
+                    background-color: $black-00;
+                    border-radius: 1rem;
+                }
             }
         }
     }

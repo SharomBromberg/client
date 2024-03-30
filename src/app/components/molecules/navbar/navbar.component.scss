@@ -5,25 +5,20 @@
 @import '../../../../assets/tokens/shadows.scss';
 
 .navbar {
-    height: 6rem;
+    width: 100%;
     display: flex;
     justify-content: space-around;
 
-
     &__content {
-        background-color: $black-00;
-        opacity: 90%;
+        background-color: $blue-01;
         display: flex;
         width: 100%;
-
         justify-content: space-between;
         place-content: center;
         align-items: center;
 
-        &__home-page {
-            background-color: $blue-01;
-            opacity: 60%;
-            /* Color para la página de inicio */
+        &.productspage {
+            background-color: $black-00;
         }
 
         &__logo {
@@ -50,17 +45,24 @@
     }
 }
 
-@media (min-width: $breakpoint-desktop-small) {
+@media (min-width: $breakpoint-480p) {
     .navbar {
         height: 6rem;
 
         &__content {
             position: fixed;
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
             z-index: 100;
+            opacity: 90%;
+            top: 0;
+
+            &__home-page {
+                background-color: $blue-01;
+                opacity: 60%;
+                /* Color para la página de inicio */
+            }
 
             &__logo {
                 display: flex;
@@ -108,38 +110,39 @@
     }
 }
 
-@media (max-width: $breakpoint-desktop-small) {
+@media (max-width: $breakpoint-tablet-portrait) {
     .navbar {
-
+        height: 4rem;
         display: flex;
-        width: 100%;
-        top: 0;
+        max-width: 100%;
         place-content: center;
         z-index: 100;
+        background-color: $blue-01;
+
 
         &__content {
-            width: 100%;
-            background-color: $blue-01;
-            padding: 1rem;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            width: 100%;
+            height: fit-content;
+            background-color: $blue-01;
+            justify-content: space-around;
             align-items: center;
-            height: 10%;
-            margin-right: $margin-small;
-            margin-left: $margin-small;
-            border-bottom-left-radius: 1rem;
-            border-bottom-right-radius: 1rem;
 
             &__logo {
-                max-width: 50%;
+                img {
+                    display: flex;
+                    margin: auto 0;
+                    width: 4rem;
+                }
             }
 
             &__mobilebutton {
-                padding: 0.3rem 0.5rem;
+                padding: 0rem 0.5rem;
                 margin-left: 0.75rem;
                 font-size: 1.5rem;
-                color: $black-00;
+                color: $white-00;
+                background-color: $blue-03;
                 border-radius: 0.5rem;
                 transition: background-color 0.3s, outline 0.3s;
 
@@ -156,27 +159,33 @@
             &__custommenu {
                 display: none;
                 width: 100%;
+                place-content: center;
+                justify-content: center;
 
                 &.navbar__content__menublock {
                     display: block;
                 }
 
                 &__list {
-
-                    font-weight: 500;
+                    @include fira-code-medium;
                     display: flex;
+                    position: absolute;
                     flex-direction: column;
-                    padding: 1rem;
-                    border: 0.1rem solid $white-00;
-                    border-radius: 0.375rem;
-                    background-color: $blue-03;
+                    gap: 0.1rem;
+                    width: 100%;
+                    opacity: 85%;
+                    background-color: $black-00;
                     list-style: none;
+                    margin-top: 0 auto;
+                    padding: 1rem;
+
 
                     &__item {
                         display: block;
-                        padding: 0.5rem 1rem;
+                        padding: 0.2rem 1rem;
                         text-decoration: none;
                         color: $white-00;
+                        border-bottom: solid $blue-03;
 
                         &:hover {
                             color: $blue-00;

@@ -4,15 +4,22 @@
 @import '../../../../assets/tokens/margins.scss';
 @import '../../../../assets/tokens/shadows.scss';
 
+
+* {
+    list-style: none;
+    color: $white-00;
+
+}
+
 footer {
-    background-color: $blue-03;
+    background-color: $blue-01;
     display: flex;
     place-content: center;
     justify-content: space-around;
     max-width: 100%;
 }
 
-@media (min-width: $breakpoint-desktop-small) {
+@media (min-width: breakpoint-480p) {
     .container {
         margin: $margin-small $margin-medium;
         display: flex;
@@ -103,24 +110,23 @@ footer {
     }
 }
 
-@media screen and (min-width: $breakpoint-mobile-small) and (max-width: $breakpoint-desktop-small) {
+@media (max-width: $breakpoint-tablet-portrait) {
     .footer {
-        padding: 0 3rem;
+        padding: 0 1rem;
         margin-right: $margin-small;
         margin-left: $margin-small;
         margin-top: $margin-large;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         height: auto;
-
+        list-style: none;
 
         .container {
             display: flex;
             width: 100%;
             flex-direction: column;
-
             justify-content: space-around;
-
+            list-style: none;
 
             &__allies {
                 display: flex;
@@ -145,20 +151,20 @@ footer {
 
             &__contact {
                 display: flex;
-                color: $white-00;
+
 
                 h2 {
                     @include fira-code-semibold;
                 }
 
+
+
                 li {
-                    @include fira-code-semibold;
-                    display: flex;
-                    list-style: none;
+                    @include fira-code-normal;
+
 
                     img {
                         height: 1rem;
-
 
                     }
 
@@ -166,7 +172,10 @@ footer {
                         color: $white-00;
                         margin: 0 $margin-small;
                     }
+
                 }
+
+
             }
 
             &__findUs {

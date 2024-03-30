@@ -13,7 +13,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
-  declarations: [ProductFormComponent, ProductListComponent],
+  declarations: [],
   imports: [
     CommonModule,
     AtomsModule,
@@ -30,8 +30,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     OrganismsModule,
     TemplatesModule,
     PagesModule,
-    ProductFormComponent,
-    ProductListComponent
+
   ],
 })
 export class ComponentsModule { }

@@ -1,4 +1,4 @@
 export enum statusClassButton {
-    BUTTON_LIGTHBLUE_01 = 'button-ligthblue-00',
+    BUTTON_BLACK_00 = 'button-black-00',
     DEFAULT = '',
 }

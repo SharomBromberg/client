@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { ProductService } from '../../../services/product.service';
 import { Product } from '../../../interfaces/product';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,6 +14,11 @@ export class ProductsTemplateComponent {
 
   selectedProduct: Product | null = null;
   products: Product[] = [];
+
+
+  @Input() buttonText: string = '';
+  @Input() customStyle: string = '';
+  @Output() buttonClick = new EventEmitter<void>();
 
 
   constructor(private productService: ProductService, private route: ActivatedRoute, config: NgbCarouselConfig) { }

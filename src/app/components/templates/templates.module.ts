@@ -12,6 +12,12 @@ import { NetworksComponent } from './networks/networks.component';
 import { SupportComponent } from './support/support.component';
 import { TechnologyComponent } from './technology/technology.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ProductListComponent } from '../product-list/product-list.component';
+import { ProductFormComponent } from '../product-form/product-form.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ProductFormTemplateComponent } from './product-form-template/product-form-template.component';
+import { CategoriesTemplateComponent } from './categories-template/categories-template.component';
+import { ProductListTemplateComponent } from './product-list-template/product-list-template.component';
 
 
 @NgModule({
@@ -20,6 +26,12 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     NetworksComponent,
     SupportComponent,
     TechnologyComponent,
+    ProductFormTemplateComponent,
+    CategoriesTemplateComponent,
+    ProductListTemplateComponent,
+
+
+
 
   ],
   imports: [
@@ -28,13 +40,20 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     MoleculesModule,
     OrganismsModule,
     TemplatesRoutingModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   exports: [
     DevelopmentComponent,
     NetworksComponent,
     SupportComponent,
-    TechnologyComponent
+    TechnologyComponent,
+    ProductFormTemplateComponent,
+    CategoriesTemplateComponent,
+    ProductListTemplateComponent
+
   ]
 })
 export class TemplatesModule { }

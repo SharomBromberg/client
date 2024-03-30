@@ -17,7 +17,6 @@ import { FooterComponent } from './footer/footer.component';
     RouterModule,
     AtomsModule,
     FormsModule,
-    FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
   ],

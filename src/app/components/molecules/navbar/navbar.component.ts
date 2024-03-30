@@ -16,17 +16,19 @@ export class NavbarComponent {
 
   ];
   isMenuOpen: boolean = false;
-  isHomePage: boolean = false;
-  constructor(private router: Router) { }
+  currentPageClass: string = '';
 
-  ngOnInit() {
+  constructor(private router: Router) {
     this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        this.isHomePage = (event.url === '/Inicio');
+        this.currentPageClass = this.getPageClass(this.router.url);
       }
     });
   }
 
+  ngOnInit() {
+
+  }
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
     console.log(this.isMenuOpen);
@@ -34,5 +36,14 @@ export class NavbarComponent {
   closeMenu(): void {
 
     this.isMenuOpen = false;
+  }
+  getPageClass(url: string): string {
+    if (url === '/Inicio') {
+      return 'homepage';
+    } else if (url === '/Productos') {
+      return 'productspage';
+    }
+    // Agrega más condiciones según sea necesario para otras páginas
+    return '';
   }
 }

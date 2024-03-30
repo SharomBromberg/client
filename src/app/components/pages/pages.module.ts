@@ -7,6 +7,8 @@ import { OrganismsModule } from '../organisms/organisms.module';
 import { TemplatesModule } from '../templates/templates.module';
 import { HomeModule } from './home/home.module';
 import { HomeComponent } from './home/home.component';
+import { AdminRoutingModule } from './admin/admin-routing.module';
+import { AdminModule } from './admin/admin.module';
 
 
 @NgModule({
@@ -19,7 +21,9 @@ import { HomeComponent } from './home/home.component';
     OrganismsModule,
     TemplatesModule,
     HomeModule,
+    AdminRoutingModule,
+    AdminModule
   ],
-  exports: [HomeComponent]
+  exports: []
 })
 export class PagesModule { }

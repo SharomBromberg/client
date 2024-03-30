@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ProductsTemplateRoutingModule } from './products-template-routing.module';
 import { ProductsTemplateComponent } from './products-template.component';
 import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { AtomsModule } from '../../atoms/atoms.module';
 
 
 
@@ -12,6 +13,7 @@ import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
   imports: [
     CommonModule,
     ProductsTemplateRoutingModule,
+    AtomsModule
   ],
   exports: [ProductsTemplateComponent],
   providers: [NgbCarouselConfig],
