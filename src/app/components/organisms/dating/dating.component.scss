@@ -127,11 +127,15 @@
                     width: 18rem;
                     height: 18rem;
                     object-fit: cover;
+
                 }
 
                 &__title {
                     @include fira-code-bold;
-                    text-align: center
+                    text-align: center;
+                    width: 80%;
+                    padding: 2rem 0;
+
                 }
 
                 &__button {

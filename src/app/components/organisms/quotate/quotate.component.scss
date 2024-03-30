@@ -127,6 +127,7 @@
 
                 &__title {
                     @include fira-code-bold-medium;
+                    max-width: 80%
                 }
 
                 &__button {
